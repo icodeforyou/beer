@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Beerz</title>
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+        <link href="./css/flexboxgrid.min.css" rel="stylesheet" type="text/css">
+
+        <style>
+            body {
+                font: 1em "Raleway", sans-serif;
+                padding: 10px;
+                margin-top: 20px;
+                -ms-overflow-style: scrollbar;
+                -webkit-app-region:drag;
+            }
+            table {
+                width: 100%
+            }
+            input[type="submit"],
+            input[type="reset"],
+            input[type="button"],
+            input[type="text"],
+            button,
+            textarea {
+                -webkit-app-region: no-drag;
+            }
+            #background::after {
+                background: url('./images/backgrounds/220806_piwo_szklanka.jpg') no-repeat;
+                opacity: 0.8;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                position:absolute;
+                z-index: -1;
+                content: "";
+            }
+            #search-input {
+                font-size: 1.5em;
+                width: 100%;
+                padding: 10px;
+            }
+            .header {
+                margin: 10px 0;
+            }
+            .subheader {
+                font-size: 1em;
+                color: #bbb;
+            }
+            #article {
+                background-color: #fff;
+                border-radius: 10px;
+                padding: 20px;
+            }
+            #article-image {
+                max-height: 250px;
+                margin: 10px;
+            }
+            #article-price {
+                font-size: 3em;
+                color: green;
+            }
+            #search-form {
+                width: 98%;
+            }
+            #search-results {
+                background-color: #fff;
+                padding: 10px;
+                width: 100%;
+                margin: 20px 0;
+                border-radius: 10px;
+                height: 430px;
+                overflow-x: scroll;
+                display:none;
+            }
+            #search-input {
+                border: none;
+                border-radius: 10px;
+            }
+            .search-item {
+                padding: 5px 0;
+            }
+            #beer-on-untapped {
+                height: 500px;
+                overflow-x: scroll;
+            }
+            .checkin-row {
+                padding: 10px 0;
+                border-bottom: 1px solid #ccc;
+            }
+            .untapped-check {
+                font-size: .9em;
+                line-height: 1.3em;
+            }
+            .untapped-check p {
+                margin: 0;
+            }
+            .checkin-time { color: #bbb }
+            .checkin-comment {
+                font-family: 'Shadows Into Light', cursive;
+                width: 100%;
+                margin: 10px 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="background"></div>
+        <div id="search-form">
+            <h1>Sök i Systembolagets artikelregister</h1>
+            <input type="text" id="search-input">
+            <div id="search-results"></div>
+        </div>
+        <div id="article" style="display:none;">
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h1 id="article-header" class="header"></h1>
+                            <span id="article-producer" class="subheader"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <img id="article-image" src="./images/beericon.png">
+                        </div>
+                        <div class="col-xs-9">
+                            <p id="article-desc"></p>
+                            <span id="article-price"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs">
+                            <button id="go-back">Gå tillbaka</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h1 class="header">Untapped</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="beer-on-untapped" class="col-xs-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        // You can also require other files to run in this process
+        require("./renderer.js");
+    </script>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "beerz",
+  "version": "0.0.1",
+  "description": "Reads Systembolagets XML file and searches their product range for beers",
+  "main": "main.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . Beerz --platform=darwin --arch=x64 --version=0.1 --overwrite --prune=true --out=release-builds"
+  },
+  "keywords": [
+    "beers"
+  ],
+  "author": "Johan Thorstedt",
+  "repository": "https://github.com/electron/electron",
+  "devDependencies": {
+    "electron": "~1.6.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "node-untappd": "^0.4.1",
+    "request": "^2.82.0",
+    "xml2js": "^0.4.19"
+  }
+}
